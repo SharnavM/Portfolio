@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+body {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: both mandatory;
+}
+
+/* -------------------- Home Page -------------------- */
+.homepage {
+    background-color: #252A34;
+}
+
+.profile_img img {
+    position: absolute;
+    width: 25em;
+    height: 25em;
+    right: 25em;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 99;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.profile_img::before,
+.profile_img::after {
+    content: "";
+    width: 85em;
+    height: 25em;
+    background-color: #131313;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: inherit;
+
+}
+
+.profile_img::after {
+    width: 26.5em;
+    height: 26.5em;
+    background-color: #252A34;
+    border-radius: 50%;
+    right: 24em;
+}
+
+.name,
+.job {
+    position: absolute;
+    top: 45vh;
+    left: 15%;
+    font-size: 5em;
+    color: #EAEAEA;
+    font-family: 'Crimson Text', serif;
+    transform: translateY(-50%);
+}
+
+.name {
+    letter-spacing: -1px;
+}
+
+.job {
+    top: 50vh;
+    font-size: 1.5em;
+    opacity: 0.5;
+    margin-left: 10px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.btn {
+    position: absolute;
+    top: 53vh;
+    left: 15%;
+    font-size: 1.25em;
+    margin-left: 10px;
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-family: 'Work Sans', sans-serif;
+    color: #EAEAEA;
+    border: 1px solid #FF2E63;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: #FF2E63;
+}
+
+/* -------------------- About Page -------------------- */
+
+.aboutPage {
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.img,
+.img img {
+    width: 35vw;
+    height: 35vw;
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    transform: translate(-50%, -50%);
+}
+
+.about {
+    font-size: 8em;
+}
+
+.aboutDescp {
+    margin-top: 75px;
+    width: 40%;
+}
+
+/* -------------------- Skill Page -------------------- */
+
+.skillPage {
+    background-color: #252A34;
+    position: relative;
+}
+
+.circle1,
+.projectsPage .circle_2 {
+    width: 25vw;
+    height: 25vw;
+    background-image: linear-gradient(90deg, #5D0CE1, #892AE2);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2%;
+    left: -1%;
+    transform: translateX(-50%);
+}
+
+.circle2,
+.projectsPage .circle {
+    width: 20vw;
+    height: 20vw;
+    background-image: linear-gradient(90deg, #BF227A, #F852C5);
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    transform: translateX(50%);
+}
+
+.title {
+    font-size: 7em;
+    width: 100vw;
+    text-align: center;
+    font-family: "Crimson Text", serif;
+    color: #EAEAEA;
+    transform: translateY(20px);
+}
+
+.card-cont {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(40em, 1fr));
+    margin-top: 40px;
+}
+
+.card {
+    margin: 2em 2em;
+    width: 17.5em;
+    height: 17.5em;
+    background: #1d1d1d;
+    background: rgba(255, 255, 255, 0.089);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.068);
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: #EAEAEA;
+}
+
+.skillLogo {
+    font-size: 5em;
+}
+
+.skillText {
+    margin-top: 10px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.07em;
+}
+
+.card::after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: #FF2E63;
+    position: absolute;
+    bottom: -95%;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
+.card:hover:after {
+    bottom: 0;
+}
+
+/* -------------------- Project Page -------------------- */
+
+.projectsPage {
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.projectsPage .circle_2 {
+    background-image: linear-gradient(90deg, #BF227A, #F852C5);
+}
+
+.projectsPage .circle {
+    background-image: linear-gradient(90deg, #5D0CE1, #892AE2);
+}
+
+.projectsPage .card-cont {
+    grid-template-columns: repeat(auto-fill, minmax(50em, 1fr));
+}
+
+.projectsPage .card {
+    width: 40em;
+    height: 18em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    cursor: default;
+}
+
+.projectsPage .card::after {
+    display: none;
+}
+
+.projectIcon {
+    font-size: 5em;
+}
+
+.textCont {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+}
+
+.projectTitle {
+    font-family: "Crimson Text", serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+.projectText {
+    margin: 10px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.07em;
+    opacity: 0.5;
+}
+
+.projectLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 10px;
+    font-family: "Work Sans", sans-serif;
+}
+
+.projectLinks a:nth-child(1) {
+    margin-right: 20px;
+}
+
+.projectLinks a {
+    text-decoration: none;
+    color: #EAEAEA;
+    transition: all 0.3s;
+
+}
+
+.projectLinks a i {
+    transition: all 0.3s;
+}
+
+.projectLinks a:hover {
+    color: #FF2E63;
+}
+
+.projectLinks a:hover i {
+    margin-left: 5px;
+    color: #FF2E63;
+}
+
+.palette {
+    font-size: 2em;
+    z-index: -1;
+}
+
+.brush {
+    font-size: 1em;
+    margin-left: -1em;
+    margin-top: -2em;
+    color: #e74470;
+}
+
+/* -------------------- Footer -------------------- */
+
+.footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.footer .title {
+    font-size: 4em;
+}
+
+.social-list {
+    display: flex;
+    width: 50vw;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-15%);
+}
+
+.social-list a {
+    text-decoration: none;
+    color: #EAEAEA;
+    font-size: 2em;
+    margin-right: 1.5em;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.social-list a:hover {
+    opacity: 1;
+}

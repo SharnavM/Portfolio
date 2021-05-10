@@ -303,14 +303,14 @@ body {
 }
 
 .palette {
-    font-size: 2em;
+    font-size: 1.5em;
     z-index: -1;
 }
 
 .brush {
     font-size: 1em;
     margin-left: -1em;
-    margin-top: -2em;
+    margin-top: -1.5em;
     color: #e74470;
 }
 
@@ -349,4 +349,64 @@ body {
 
 .social-list a:hover {
     opacity: 1;
+}
+
+@media only screen and (max-width: 1366px) {
+    .profile_img img {
+        width: 25vw;
+        height: 25vw;
+        right: 15vw;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .profile_img::before {
+        width: 75vw;
+        height: 40vh;
+    }
+
+    .profile_img::after {
+        width: 26.5vw;
+        height: 26.5vw;
+        background-color: #252A34;
+        border-radius: 50%;
+        right: 14.25vw;
+    }
+
+    .job {
+        margin-top: 15px;
+    }
+
+    .about {
+        margin-top: -50px;
+    }
+
+    .aboutDescp {
+        margin-top: 45px;
+    }
+
+    .card-cont {
+        grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+        margin-top: -2%;
+    }
+
+    .card {
+        width: 15em;
+        height: 15em;
+    }
+
+    .projectsPage .card-cont {
+        margin-top: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+
+    }
+
+    .projectsPage .card-cont .card {
+        width: 30em;
+        height: 13.5em;
+    }
+
+    .projectText {
+        font-size: 1em;
+    }
 }

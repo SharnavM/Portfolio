@@ -1,3 +1,7 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -136,9 +140,12 @@
         </script>
         <script src="./snap-scroll.min.js"></script>
         <script>
-            $(".section").SnapScroll({
-                animateDuration: 1000,
-            });
+            if (window.navigator.platform.includes("Win") || window.navigator.platform.includes("Mac")) {
+                $(".section").SnapScroll({
+                    animateDuration: 1000,
+                });
+            }
+
 
             $(".btn").click(function () {
                 document.querySelector(".aboutPage").scrollIntoView({
